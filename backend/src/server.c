@@ -238,6 +238,17 @@ void startServer(void)
     SocketType serverSocket;
     struct sockaddr_in serverAddress;
 
+        const char *portEnvironment = getenv("PORT");
+
+    int serverPort = (portEnvironment != NULL)
+        ? atoi(portEnvironment)
+        : SERVER_PORT;
+
+    if (serverPort < 1 || serverPort > 65535)
+    {
+        serverPort = SERVER_PORT;
+    }
+
 #ifdef _WIN32
     WSADATA wsaData;
 
