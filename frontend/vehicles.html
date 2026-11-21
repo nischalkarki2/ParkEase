@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ParkEase | Vehicles</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="app-container">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+
+            <div class="logo">
+                <h2>Park<span>Ease</span></h2>
+                <p>SMART PARKING SYSTEM</p>
+            </div>
+
+            <nav>
+                <a href="index.html">Dashboard</a>
+                <a href="vehicles.html" class="active">Vehicles</a>
+                <a href="parking.html">Parking Slots</a>
+                <a href="queue.html">Waiting Queue</a>
+                <a href="#">Activity History</a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <p>ParkEase v1.0</p>
+                <p>College Parking System</p>
+            </div>
+
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+
+            <header class="topbar">
+    <div>
+        <h1>Vehicles</h1>
+        <p>Manage all currently parked vehicles</p>
+    </div>
+</header>
+
+<!-- Parked Vehicles Section -->
+<section class="content-section">
+
+    <div class="section-heading">
+        <h2>All Parked Vehicles</h2>
+        <p>View and manage all currently parked vehicles</p>
+    </div>
+
+    <div class="panel">
+
+        <div class="form-group">
+            <label for="vehicleSearch">Search Vehicles</label>
+
+            <input
+                type="text"
+                id="vehicleSearch"
+                placeholder="Search by vehicle number or owner name..."
+            >
+        </div>
+
+        <div class="table-container">
+
+            <table id="vehiclesTable">
+                <thead>
+                    <tr>
+                        <th>Vehicle Number</th>
+                        <th>Owner Name</th>
+                        <th>Vehicle Type</th>
+                        <th>Parking Slot</th>
+                        <th>Entry Time</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+
+                <tbody id="parkedVehiclesTableBody">
+                    <tr>
+                        <td colspan="6">Loading vehicles...</td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</section>
+
+        </main>
+
+    </div>
+
+</body>
+<script src="js/vehicles.js"></script>
+</html>

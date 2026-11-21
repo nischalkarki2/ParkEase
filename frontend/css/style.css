@@ -1,0 +1,700 @@
+
+/* ==============================
+   GLOBAL STYLES
+============================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #0b1120;
+    color: #e5e7eb;
+}
+
+.app-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* ==============================
+   SIDEBAR
+============================== */
+
+.sidebar {
+    width: 250px;
+    background: #111827;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid #263247;
+}
+
+.logo h2 {
+    font-size: 28px;
+    color: #ffffff;
+}
+
+.logo h2 span {
+    color: #38bdf8;
+}
+
+.logo p {
+    font-size: 10px;
+    color: #94a3b8;
+    letter-spacing: 2px;
+    margin-top: 5px;
+}
+
+.sidebar nav {
+    margin-top: 55px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+
+.sidebar nav a {
+    display: block;
+    text-decoration: none;
+    color: #94a3b8;
+    padding: 14px 16px;
+    border-radius: 9px;
+    border-left: 3px solid transparent;
+    transition: background 0.3s ease,
+                color 0.3s ease,
+                border-color 0.3s ease,
+                transform 0.3s ease;
+}
+
+.sidebar nav a:hover {
+    background: #1e293b;
+    color: #ffffff;
+    transform: translateX(4px);
+}
+
+.sidebar nav a.active {
+    background: #1e40af;
+    color: #ffffff;
+    border-left-color: #38bdf8;
+}
+
+
+.sidebar-footer {
+    margin-top: auto;
+    color: #64748b;
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+/* ==============================
+   MAIN CONTENT
+============================== */
+
+.main-content {
+    flex: 1;
+    padding: 35px;
+    overflow-x: hidden;
+}
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 35px;
+}
+
+.topbar h1 {
+    font-size: 30px;
+    color: #ffffff;
+}
+
+.topbar p {
+    color: #94a3b8;
+    margin-top: 7px;
+}
+
+.system-status {
+    background: #132c28;
+    color: #4ade80;
+    padding: 11px 16px;
+    border-radius: 30px;
+    font-size: 13px;
+}
+
+.status-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background: #4ade80;
+    border-radius: 50%;
+    margin-right: 7px;
+}
+
+/* ==============================
+   STATISTICS CARDS
+============================== */
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-bottom: 35px;
+}
+
+.stat-card {
+    background: #151f32;
+    border: 1px solid #263247;
+    padding: 24px;
+    border-radius: 14px;
+}
+
+.stat-card p {
+    color: #94a3b8;
+    font-size: 14px;
+}
+
+.stat-card h2 {
+    font-size: 32px;
+    margin: 15px 0 8px;
+    color: #38bdf8;
+}
+
+.stat-card span {
+    font-size: 12px;
+    color: #64748b;
+}
+
+/* ==============================
+   PARKING OVERVIEW
+============================== */
+
+.content-section {
+    margin-bottom: 35px;
+}
+
+.section-heading {
+    margin-bottom: 20px;
+}
+
+.section-heading h2 {
+    color: #ffffff;
+    font-size: 21px;
+}
+
+.section-heading p {
+    color: #94a3b8;
+    font-size: 13px;
+    margin-top: 6px;
+}
+
+.parking-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.parking-card,
+.panel {
+    background: #151f32;
+    border: 1px solid #263247;
+    padding: 24px;
+    border-radius: 14px;
+}
+
+.parking-card h3 {
+    color: #ffffff;
+    margin-bottom: 7px;
+}
+
+.parking-card p {
+    color: #94a3b8;
+    font-size: 13px;
+}
+
+.slot-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-top: 22px;
+}
+
+
+.parking-slot {
+    padding: 15px 5px;
+    text-align: center;
+    border-radius: 8px;
+    font-size: 13px;
+    transition: 0.3s;
+}
+
+.parking-slot.available {
+    background: #123c2d;
+    color: #4ade80;
+    border: 1px solid #166534;
+}
+
+.parking-slot.occupied {
+    background: #451d2a;
+    color: #fb7185;
+    border: 1px solid #9f354b;
+}
+
+
+/* ==============================
+   BOTTOM PANELS
+============================== */
+
+.bottom-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.panel h2 {
+    font-size: 19px;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.empty-message {
+    color: #64748b;
+    font-size: 14px;
+}
+
+/* ==============================
+   RESPONSIVE DESIGN
+============================== */
+
+@media (max-width: 1100px) {
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 750px) {
+    .app-container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+    }
+
+    .sidebar nav {
+        margin-top: 25px;
+    }
+
+    .main-content {
+        padding: 20px;
+    }
+
+    .parking-grid,
+    .bottom-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .topbar {
+        align-items: flex-start;
+        gap: 15px;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 450px) {
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+/* ==================================
+   VEHICLE REGISTRATION FORM
+================================== */
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #cbd5e1;
+    font-size: 14px;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    background: #0f172a;
+    color: #f8fafc;
+    border: 1px solid #334155;
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #38bdf8;
+}
+
+#registrationForm button {
+    padding: 12px 22px;
+    background: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+#registrationForm button:hover {
+    background: #1d4ed8;
+}
+
+#registrationMessage {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+
+/* ==================================
+   REMOVE VEHICLE FORM
+================================== */
+
+#removeVehicleForm button {
+    padding: 12px 22px;
+    background: #dc2626;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+#removeVehicleForm button:hover {
+    background: #b91c1c;
+}
+
+#removalMessage {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+
+/* ==================================
+   PARKED VEHICLES TABLE
+================================== */
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+#vehiclesTable {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+#vehiclesTable th,
+#vehiclesTable td {
+    padding: 14px;
+    border-bottom: 1px solid #334155;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+#vehiclesTable th {
+    color: #38bdf8;
+    font-weight: 600;
+}
+
+#vehiclesTable td {
+    color: #cbd5e1;
+}
+
+#vehiclesTable tbody tr:hover {
+    background: #1e293b;
+}
+
+/* Waiting Queue Table */
+
+#waitingQueueTable {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+#waitingQueueTable th,
+#waitingQueueTable td {
+    padding: 14px;
+    border-bottom: 1px solid #334155;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+#waitingQueueTable th {
+    color: #38bdf8;
+    font-weight: 600;
+}
+
+#waitingQueueTable td {
+    color: #cbd5e1;
+}
+
+#waitingQueueTable tbody tr:hover {
+    background: #1e293b;
+}
+
+/* TABLE REMOVE BUTTON */
+
+#vehiclesTable .remove-table-btn {
+    padding: 7px 12px;
+    background: #dc2626;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+#vehiclesTable .remove-table-btn:hover {
+    background: #b91c1c;
+}
+
+
+/* Parking Slots Page */
+.slot-card {
+    padding: 20px 12px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 600;
+    border: 1px solid transparent;
+    word-break: break-word;
+}
+
+.slot-card.available {
+    background: #14532d;
+    color: #bbf7d0;
+    border-color: #22c55e;
+}
+
+.slot-card.occupied {
+    background: #7f1d1d;
+    color: #fecaca;
+    border-color: #ef4444;
+}
+
+
+
+/* Waiting Queue Page */
+#twoWheelerQueueTable,
+#fourWheelerQueueTable {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+#twoWheelerQueueTable th,
+#twoWheelerQueueTable td,
+#fourWheelerQueueTable th,
+#fourWheelerQueueTable td {
+    padding: 14px;
+    border-bottom: 1px solid #334155;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+#twoWheelerQueueTable th,
+#fourWheelerQueueTable th {
+    color: #38bdf8;
+    font-weight: 600;
+}
+
+#twoWheelerQueueTable td,
+#fourWheelerQueueTable td {
+    color: #cbd5e1;
+}
+
+#twoWheelerQueueTable tbody tr:hover,
+#fourWheelerQueueTable tbody tr:hover {
+    background: #1e293b;
+}
+
+
+
+/* Activity History Page */
+#activityTable {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+#activityTable th,
+#activityTable td {
+    padding: 15px;
+    border-bottom: 1px solid #334155;
+    font-size: 14px;
+}
+
+#activityTable th {
+    color: #38bdf8;
+    font-weight: 600;
+}
+
+#activityTable td {
+    color: #cbd5e1;
+}
+
+#activityTable tbody tr:hover {
+    background: #1e293b;
+}
+
+
+/* Activity Refresh Button */
+#refreshActivities {
+    margin-top: 15px;
+    padding: 10px 18px;
+    background: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+#refreshActivities:hover {
+    background: #1d4ed8;
+}
+
+
+
+/* Improved Page Headings */
+.topbar h1 {
+    font-size: 30px;
+    font-weight: 700;
+    color: #f8fafc;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+}
+
+.topbar p {
+    color: #94a3b8;
+    font-size: 14px;
+}
+
+.section-heading h2 {
+    font-size: 21px;
+    font-weight: 600;
+    color: #f8fafc;
+    margin-bottom: 8px;
+}
+
+.section-heading p {
+    color: #94a3b8;
+    font-size: 14px;
+}
+
+
+/* Improved Panel Design */
+.panel {
+    background: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 14px;
+    padding: 24px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transition: border-color 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.panel:hover {
+    border-color: #475569;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+
+/* Improved Statistics Cards */
+.stat-card {
+    background: linear-gradient(145deg, #1e293b, #172554);
+    border: 1px solid #334155;
+    border-radius: 14px;
+    padding: 24px;
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+.stat-card h3 {
+    color: #94a3b8;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 12px;
+}
+
+.stat-card p {
+    color: #38bdf8;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+
+/* Improved Table Design */
+table {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+table thead {
+    background: #0f172a;
+}
+
+table th {
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 12px;
+}
+
+table tbody tr {
+    transition: background 0.2s ease;
+}
+
+table tbody tr:nth-child(even) {
+    background: rgba(30, 41, 59, 0.35);
+}
+
+
+/* Improved Button Interactions */
+button {
+    transition: background 0.3s ease,
+                transform 0.2s ease,
+                box-shadow 0.3s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+button:focus-visible {
+    outline: 2px solid #38bdf8;
+    outline-offset: 3px;
+}

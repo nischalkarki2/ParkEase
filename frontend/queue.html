@@ -1,0 +1,123 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ParkEase - Waiting Queue</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="app-container">
+
+        <aside class="sidebar">
+            <h2>ParkEase</h2>
+
+            <nav>
+                <a href="index.html">Dashboard</a>
+                <a href="vehicles.html">Vehicles</a>
+                <a href="parking.html">Parking Slots</a>
+                <a href="queue.html" class="active">Waiting Queue</a>
+                <a href="#">Activity History</a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+
+            <header class="topbar">
+                <div>
+                    <h1>Waiting Queue</h1>
+                    <p>Manage vehicles waiting for parking spaces</p>
+                </div>
+            </header>
+
+
+<!-- Queue Statistics -->
+<section class="content-section">
+    <div class="section-heading">
+        <h2>Queue Overview</h2>
+        <p>Current waiting vehicle statistics</p>
+    </div>
+
+    <div class="stats-grid">
+        <div class="stat-card">
+            <h3>Total Waiting</h3>
+            <p id="totalWaiting">0</p>
+        </div>
+
+        <div class="stat-card">
+            <h3>Two-Wheelers</h3>
+            <p id="twoWheelerWaiting">0</p>
+        </div>
+
+        <div class="stat-card">
+            <h3>Four-Wheelers</h3>
+            <p id="fourWheelerWaiting">0</p>
+        </div>
+    </div>
+</section>
+
+<!-- Two-Wheeler Queue -->
+<section class="content-section">
+    <div class="section-heading">
+        <h2>Two-Wheeler Waiting Queue</h2>
+        <p>Vehicles waiting for two-wheeler parking spaces</p>
+    </div>
+
+    <div class="panel">
+        <div class="table-container">
+            <table id="twoWheelerQueueTable">
+                <thead>
+                    <tr>
+                        <th>Position</th>
+                        <th>Vehicle Number</th>
+                        <th>Owner Name</th>
+                        <th>Vehicle Type</th>
+                    </tr>
+                </thead>
+                <tbody id="twoWheelerQueueBody">
+                    <tr>
+                        <td colspan="4">Loading queue...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+<!-- Four-Wheeler Queue -->
+<section class="content-section">
+    <div class="section-heading">
+        <h2>Four-Wheeler Waiting Queue</h2>
+        <p>Vehicles waiting for four-wheeler parking spaces</p>
+    </div>
+
+    <div class="panel">
+        <div class="table-container">
+            <table id="fourWheelerQueueTable">
+                <thead>
+                    <tr>
+                        <th>Position</th>
+                        <th>Vehicle Number</th>
+                        <th>Owner Name</th>
+                        <th>Vehicle Type</th>
+                    </tr>
+                </thead>
+                <tbody id="fourWheelerQueueBody">
+                    <tr>
+                        <td colspan="4">Loading queue...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+
+        </main>
+
+    </div>
+<script src="js/queue.js"></script>
+</body>
+</html>

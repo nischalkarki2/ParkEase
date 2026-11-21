@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ParkEase - Parking Slots</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="app-container">
+
+        <aside class="sidebar">
+            <h2>ParkEase</h2>
+
+            <nav>
+                <a href="index.html">Dashboard</a>
+                <a href="vehicles.html">Vehicles</a>
+                <a href="parking.html" class="active">Parking Slots</a>
+                <a href="queue.html">Waiting Queue</a>
+                <a href="#">Activity History</a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+
+            <header class="topbar">
+                <div>
+                    <h1>Parking Slots</h1>
+                    <p>Monitor available and occupied parking slots</p>
+                </div>
+            </header>
+
+
+<!-- Parking Statistics -->
+<section class="content-section">
+    <div class="section-heading">
+        <h2>Parking Overview</h2>
+        <p>View the occupancy of all parking spaces</p>
+    </div>
+
+    <div class="stats-grid">
+        <div class="stat-card">
+            <h3>Total Slots</h3>
+            <p id="totalSlots">20</p>
+        </div>
+
+        <div class="stat-card">
+            <h3>Occupied Slots</h3>
+            <p id="occupiedSlots">0</p>
+        </div>
+
+        <div class="stat-card">
+            <h3>Available Slots</h3>
+            <p id="availableSlots">20</p>
+        </div>
+    </div>
+</section>
+
+<!-- Two-Wheeler Parking -->
+<section class="content-section">
+    <div class="section-heading">
+        <h2>Two-Wheeler Parking</h2>
+        <p>12 available parking spaces</p>
+    </div>
+
+    <div class="panel">
+        <div id="twoWheelerSlots" class="parking-grid"></div>
+    </div>
+</section>
+
+<!-- Four-Wheeler Parking -->
+<section class="content-section">
+    <div class="section-heading">
+        <h2>Four-Wheeler Parking</h2>
+        <p>8 available parking spaces</p>
+    </div>
+
+    <div class="panel">
+        <div id="fourWheelerSlots" class="parking-grid"></div>
+    </div>
+</section>
+
+
+        </main>
+
+    </div>
+
+    <script src="js/parking.js"></script>
+
+</body>
+</html>

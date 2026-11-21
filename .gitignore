@@ -1,0 +1,27 @@
+
+# Compiled executable files
+*.exe
+*.o
+*.obj
+
+# Debug and temporary files
+*.log
+*.tmp
+
+# IDE and editor files
+.vscode/
+.idea/
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# Local environment files
+.env
+.env.*
+
+# Git
+.git/
+
+# ParkEase runtime data
+data/*.txt

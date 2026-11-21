@@ -1,0 +1,302 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ParkEase | Smart Parking Management</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="app-container">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <h2>Park<span>Ease</span></h2>
+                <p>SMART PARKING SYSTEM</p>
+            </div>
+
+            <nav>
+                <a href="#" class="active">Dashboard</a>
+                <a href="vehicles.html">Vehicles</a>
+                <a href="parking.html">Parking Slots</a>
+                <a href="queue.html">Waiting Queue</a>
+                <a href="#">Activity History</a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <p>ParkEase v1.0</p>
+                <p>College Parking System</p>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+
+            <header class="topbar">
+                <div>
+                    <h1>Dashboard</h1>
+                    <p>Welcome to ParkEase Management System</p>
+                </div>
+
+                <div class="system-status">
+                    <span class="status-dot"></span>
+                    Backend Connection
+                </div>
+            
+            </header>
+
+            <!-- Vehicle Registration -->
+            <section class="content-section">
+                <div class="section-heading">
+                    <h2>Register Vehicle</h2>
+                    <p>Register a vehicle for college parking</p>
+                </div>
+
+                <div class="panel">
+                    <form id="registrationForm">
+
+                        <div class="form-group">
+                            <label for="vehicleNumber">Vehicle Number</label>
+                            <input
+                                type="text"
+                                id="vehicleNumber"
+                                placeholder="Example: KA01AB1234"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="ownerName">Owner Name</label>
+                            <input
+                                type="text"
+                                id="ownerName"
+                                placeholder="Enter owner's name"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="vehicleType">Vehicle Type</label>
+                            <select id="vehicleType" required>
+                                <option value="">Select vehicle type</option>
+                                <option value="1">Two-Wheeler</option>
+                                <option value="2">Four-Wheeler</option>
+                            </select>
+                        </div>
+
+                        <button type="submit">Register Vehicle</button>
+
+                        <p id="registrationMessage"></p>
+
+                    </form>
+                </div>
+            </section>
+
+            <!-- Remove Parked Vehicle -->
+<section class="content-section">
+
+    <div class="section-heading">
+        <h2>Remove Parked Vehicle</h2>
+        <p>Remove a vehicle from the college parking area</p>
+    </div>
+
+    <div class="panel">
+
+        <form id="removeVehicleForm">
+
+            <div class="form-group">
+                <label for="removeVehicleNumber">Vehicle Number</label>
+
+                <input
+                    type="text"
+                    id="removeVehicleNumber"
+                    placeholder="Example: KA01AB1234"
+                    required
+                >
+            </div>
+
+            <button type="submit">
+                Remove Vehicle
+            </button>
+
+            <p id="removalMessage"></p>
+
+        </form>
+
+    </div>
+
+</section>
+
+<!-- Parked Vehicles Table -->
+<section class="content-section">
+
+    <div class="section-heading">
+        <h2>Parked Vehicles</h2>
+        <p>View and manage all currently parked vehicles</p>
+    </div>
+
+    <div class="panel">
+
+        <div class="table-container">
+            <!-- Vehicle Search -->
+<div class="form-group">
+
+    <label for="vehicleSearch">Search Vehicles</label>
+
+    <input
+        type="text"
+        id="vehicleSearch"
+        placeholder="Search by vehicle number, owner name, or type..."
+    >
+
+</div>
+
+            <table id="vehiclesTable">
+
+                <thead>
+                    <tr>
+                        <th>Vehicle Number</th>
+                        <th>Owner Name</th>
+                        <th>Vehicle Type</th>
+                        <th>Parking Slot</th>
+                        <th>Entry Time</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+
+                <tbody id="parkedVehiclesTableBody">
+                    <tr>
+                        <td colspan="6">Loading vehicles...</td>
+                    </tr>
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- Waiting Queue Table -->
+<section class="content-section">
+
+    <div class="section-heading">
+        <h2>Waiting Queue</h2>
+        <p>Vehicles waiting for an available parking slot</p>
+    </div>
+
+    <div class="panel">
+        <div class="table-container">
+
+            <table id="waitingQueueTable">
+
+                <thead>
+                    <tr>
+                        <th>Queue Position</th>
+                        <th>Vehicle Number</th>
+                        <th>Owner Name</th>
+                        <th>Vehicle Type</th>
+                    </tr>
+                </thead>
+
+                <tbody id="waitingQueueTableBody">
+                    <tr>
+                        <td colspan="4">Loading waiting vehicles...</td>
+                    </tr>
+                </tbody>
+
+            </table>
+
+        </div>
+    </div>
+
+</section>
+
+            <!-- Statistics -->
+            <section class="stats-grid">
+
+
+                <div class="stat-card">
+                    <p>Total Parking Slots</p>
+                    <h2 id="totalSlots">20</h2>
+                    <span>12 Two-Wheelers + 8 Four-Wheelers</span>
+                </div>
+
+                <div class="stat-card">
+                    <p>Occupied Slots</p>
+                    <h2 id="occupiedSlots">0</h2>
+                    <span>Currently parked vehicles</span>
+                </div>
+
+                <div class="stat-card">
+                    <p>Available Slots</p>
+                    <h2 id="availableSlots">20</h2>
+                    <span>Ready for parking</span>
+                </div>
+
+                <div class="stat-card">
+                    <p>Waiting Vehicles</p>
+                    <h2 id="waitingVehicles">0</h2>
+                    <span>Vehicles in queue</span>
+                </div>
+
+            </section>
+
+            <!-- Parking Overview -->
+            <section class="content-section">
+                <div class="section-heading">
+                    <h2>Parking Overview</h2>
+                    <p>Live parking availability</p>
+                </div>
+
+                <div class="parking-grid">
+
+                    <div class="parking-card">
+                        <h3>Two-Wheeler Parking</h3>
+                        <p>12 Total Slots</p>
+                        <div id="twoWheelerSlots" class="slot-grid"></div>
+                    </div>
+
+                    <div class="parking-card">
+                        <h3>Four-Wheeler Parking</h3>
+                        <p>8 Total Slots</p>
+                        <div id="fourWheelerSlots" class="slot-grid"></div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- Bottom Sections -->
+            <section class="bottom-grid">
+
+                <div class="panel">
+                    <h2>Waiting Queue</h2>
+                    <div id="queueList">
+                        <p class="empty-message">Loading waiting queue...</p>
+                    </div>
+                </div>
+
+                <div class="panel">
+                    <h2>Recent Activity</h2>
+                    <div id="activityList">
+                        <p class="empty-message">Loading activities...</p>
+                    </div>
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <script src="js/dashboard.js"></script>
+
+</body>
+</html>
