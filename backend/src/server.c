@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <ctype.h>
 
 #include "../include/server.h"
 #include "../include/parking.h"
@@ -280,7 +281,7 @@ void startServer(void)
 
     serverAddress.sin_family = AF_INET;
     serverAddress.sin_addr.s_addr = htonl(INADDR_ANY);
-    serverAddress.sin_port = htons(SERVER_PORT);
+    serverAddress.sin_port = htons(serverPort);
 
     // Bind the socket to port 8080
     if (bind(serverSocket, (struct sockaddr *)&serverAddress,
@@ -308,7 +309,7 @@ void startServer(void)
     printf("\n====================================\n");
     printf("       PARKEASE HTTP SERVER\n");
     printf("====================================\n");
-    printf("Server listening on port %d\n", SERVER_PORT);
+    printf("Server listening on port %d\n", serverPort);
     printf("Waiting for frontend connections...\n");
 
 
