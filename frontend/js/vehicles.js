@@ -1,4 +1,4 @@
-const API_URL = "http://127.0.0.1:8080";
+const API_URL = "https://parkease-4qeg.onrender.com";
 
 // Load parked vehicles
 async function loadVehicles() {
